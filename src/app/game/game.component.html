@@ -1,0 +1,124 @@
+<div class="sidebar">kut sidebar</div>
+
+<div class="togglemenu">
+  <i [ngClass]="this.viewService.getState('menu') ? 'far fa-times-circle' : 'fas fa-bars'" (click)="this.viewService.toggleState('menu')"></i>
+</div>
+
+<div class="togglepmenu">
+  <i [ngClass]="this.viewService.getState('pmenu') ? 'far fa-times-circle' : 'fas fa-users'" (click)="this.viewService.toggleState('pmenu')"></i>
+</div>
+
+<div class="togglechat">
+  <i [ngClass]="this.viewService.getState('chat') ? 'far fa-times-circle' : 'fas fa-comments'" (click)="this.viewService.toggleState('chat')"></i>
+</div>
+
+<div class="togglevoice">
+  <i [ngClass]="this.viewService.getState('voice') ? 'far fa-times-circle' : 'fab fa-discord'" (click)="this.viewService.toggleState('voice')"></i>
+</div>
+
+<div class="container desktop">
+	<div class="flex-row left padding">
+		<app-black-card [text]="blackCard.text" [pick]="blackCard.pick" class="flex-item-10"></app-black-card>
+
+		<div class="flex-item-10">
+			<div id="whiteCard" class="card white-card">
+				<div class="card-inner">
+					<i class="fas fa-hourglass-half commitstatus"></i>
+					<div class="mat-card-title">waiting on player...</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="flex-item-10">
+			<div id="whiteCard" class="card white-card">
+				<div class="card-inner">
+					<i class="fas fa-hourglass-half commitstatus"></i>
+					<div class="mat-card-title">waiting on player...</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="flex-item-10 cardstack" [ngClass]="stackcards? 'showcardstack' : 'cardstack'" (click)="stackcards= !stackcards">
+      <div id="whiteCard" class="card white-card">
+        <div class="card-inner"><i class="fas fa-hourglass-half commitstatus"></i>
+          <div class="mat-card-title">waiting on player...</div>
+        </div>
+      </div>
+    </div> -->
+	</div>
+	<app-hand [cards]="whiteCards" [maxPicks]="blackCard.pick" (sendChosenCards)="submitCards($event)"></app-hand>
+
+	<div class="pmenu" [ngClass]="this.viewService.getState('pmenu') ? 'showpmenu' : 'pmenu'">
+		<ul class="playersul">
+			<li class="playersli" *ngFor="let player of this.sessionService.players">{{ player }}</li>
+		</ul>
+		<ul class="scoresul">
+			<li class="scoresli" *ngFor="let scores of this.sessionService.scores">{{ scores }}</li>
+		</ul>
+	</div>
+
+	<div *ngIf="this.viewService.getState('game')" class="game"></div>
+</div>
+
+<div class="container100">
+	<div class="transpbg" [ngClass]="this.viewService.getState('menu') ? 'showtranspbg' : 'transpbg'" (click)="this.viewService.toggleState('menu')"></div>
+
+
+
+	<div class="menu" [ngClass]="this.viewService.getState('menu') ? 'showmenu' : 'menu'">
+		<div class="flex-row left">
+			<h2>Room code:</h2>
+		</div>
+		<div class="flex-row left">
+			<div class="flex-item-10">
+				<div class="card-button roomcode">{{ this.sessionService.roomCode }}</div>
+			</div>
+			<div class="flex-item-10 right">
+				<button class="card-button">Copy</button>
+			</div>
+
+			<div class="flex-item-4">
+				<button class="card-button" (click)="this.viewService.setState('rules', true)">Game Rules</button>
+			</div>
+
+			<div class="flex-item-4">
+				<button class="card-button" (click)="this.viewService.setState('sure', true)">Quit</button>
+			</div>
+			<div class="flex-row left">
+				<h2>Visual Settings</h2>
+			</div>
+
+			<div class="flex-row left">
+				<ul>
+					<li [ngClass]="this.viewService.getState('istogglehand') ? 'check' : 'li'" (click)="this.viewService.toggleState('istogglehand')">
+						<i class="fas fa-info-circle"></i>Enable Tooltips
+					</li>
+					<li [ngClass]="this.viewService.getState('istogglehand') ? 'check' : 'li'" (click)="this.viewService.toggleState('istogglehand')">
+						Card text size
+					</li>
+					<li [ngClass]="this.viewService.getState('istogglehand') ? 'check' : 'li'" (click)="this.viewService.toggleState('istogglehand')">
+						Enable toggle button to show/hide cards in hand
+					</li>
+					<li [ngClass]="this.viewService.getState('istogglehand') ? 'check' : 'li'" (click)="this.viewService.toggleState('istogglehand')">
+						Enable toggle button to show/hide players
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="pmenu" [ngClass]="this.viewService.getState('pmenu') ? 'showpmenu' : 'pmenu'">
+			<ul class="playersul">
+				<li class="playersli" *ngFor="let player of this.sessionService.players">{{ player }}</li>
+			</ul>
+			<ul class="scoresul">
+				<li class="scoresli" *ngFor="let scores of this.sessionService.players">{{ scores }}</li>
+			</ul>
+		</div>
+
+		<div *ngIf="this.viewService.getState('game')" class="game"></div>
+	</div>
+
+	<!-- <div class="chat"></div> -->
+
+	<div class="voice"></div>
+</div>

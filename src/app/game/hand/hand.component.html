@@ -1,0 +1,42 @@
+
+
+<div class="hand" [ngClass]="this.viewService.getState('hand') ? '' : ''">
+	<!-- <div class="flex-row">
+    <div class="title">
+      Your hand
+      <h2>
+        Tap the card(s) you'd like to submit
+      </h2>
+    </div>
+  </div> -->
+  <div class="flex-row">
+		<div class="flex-item-10" *ngFor="let c of whiteCards">
+			<app-white-card [card]="c" (statusUpdate)="commitCards($event)"> </app-white-card>
+		</div>
+  </div>
+</div>
+
+
+<div class="togglehand" [ngClass]="this.viewService.getState('istogglehand') ? 'showtogglehandbtn' : 'togglehandbtn'"(click)="this.viewService.toggleState('hand')">
+	<i [ngClass]="this.viewService.getState('hand') ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
+</div>
+
+<div class="togglemodehand" [ngClass]="this.viewService.getState('togglemodehand') ? 'showtogglemodehand' : 'togglemodehand'">
+	<div class="flex-row">
+    <div class="title">
+      Your hand
+      <h2>
+        Tap the card(s) you'd like to submit
+      </h2>
+    </div>
+  </div>
+  <div class="flex-row">
+		<div class="flex-item-10" *ngFor="let c of whiteCards">
+			<app-white-card [card]="c" (statusUpdate)="commitCards($event)"> </app-white-card>
+		</div>
+  </div>
+</div>
+
+<div class="togglehand" [ngClass]="this.viewService.getState('istogglehand') ? 'showtogglehand' : 'togglehand'"  (click)="this.viewService.toggleState('hand')">
+	<i [ngClass]="this.viewService.getState('hand') ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
+</div>

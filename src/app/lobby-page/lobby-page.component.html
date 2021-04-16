@@ -1,0 +1,30 @@
+<div *ngIf="!this.viewService.getState('game')" class="blackbg">
+	<app-lobby-menu *ngIf="!this.viewService.getState('start')"></app-lobby-menu>
+
+	<div class="start" [ngClass]="this.viewService.getState('start') ? 'showstart' : 'start'">
+		<app-new-session *ngIf="this.viewService.getState('start')"></app-new-session>
+	</div>
+
+	<div class="join" [ngClass]="this.viewService.getState('join') ? 'showjoin' : 'join'">
+		<app-join-session *ngIf="this.viewService.getState('join')"></app-join-session>
+	</div>
+
+	<div class="room" [ngClass]="this.viewService.getState('room') ? 'showroom' : 'room'">
+		<app-room *ngIf="this.viewService.getState('room')"></app-room>
+	</div>
+
+	<div class="rules scroll" [ngClass]="this.viewService.getState('rules') ? 'showrules' : 'rules'">
+		<app-game-rules *ngIf="this.viewService.getState('rules')"></app-game-rules>
+	</div>
+</div>
+
+<app-game *ngIf="this.viewService.getState('game')"></app-game>
+<app-in-game-menu *ngIf="this.viewService.getState('game')"></app-in-game-menu>
+
+<div class="rules scroll" [ngClass]="this.viewService.getState('rules') ? 'showrules' : 'rules'">
+	<app-game-rules *ngIf="this.viewService.getState('rules')"></app-game-rules>
+</div>
+
+<div class="sure" [ngClass]="this.viewService.getState('sure') ? 'showsure' : 'sure'">
+	<app-quit-menu *ngIf="this.viewService.getState('sure')"></app-quit-menu>
+</div>

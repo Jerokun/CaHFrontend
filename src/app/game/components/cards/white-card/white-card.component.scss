@@ -1,0 +1,12 @@
+.white-card {
+    background-color: #fff;
+    color: rgb(22, 22, 22);    
+    bottom:0px;
+}
+.grid-item:hover .white-card{
+    bottom: 15px;
+}  
+// .white-card:focus {
+//     background-color: tomato;
+//     color: #fff;
+// }

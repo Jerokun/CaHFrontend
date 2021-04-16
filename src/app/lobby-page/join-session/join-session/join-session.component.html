@@ -1,0 +1,77 @@
+	<i
+		class="far fa-times-circle close"
+		[ngClass]="this.viewService.getState('join') ? 'showclose' : 'close'"
+		(click)="this.viewService.setState('join', false)"
+	></i>
+	<div class="title">
+    Join a Game...
+		<div class="subtitle">Enter your name and the room code to start the party!</div>
+	</div>
+
+	<div class="flex-row left">
+		<h2>Room code:</h2>
+	</div>
+	<div class="flex-row left">
+		<div class="flex-item-10">
+      <input type="text" class="card-button roomcode" placeholder="Example: 12AB">
+
+			<!-- <div class="card-button roomcode">"{{ this.sessionService.roomCode }}"</div> -->
+		</div>
+		<div class="flex-item-10 right">
+      <!-- <button class="card-button" (click)="this.sessionService.copyInputMessage(roomcode)" value="Copy" >Copy</button> -->
+		</div>
+	</div>
+	<div class="flex-row left">
+		<h2>Players in room:</h2>
+	</div>
+	<div class="flex-row left">
+		<ul>
+			<li class="players" *ngFor="let player of this.sessionService.players">{{ player }}</li>
+		</ul>
+	</div>
+	<!-- <div class="flex-row">
+		<div class="flex-item-4">
+			<button class="card-button" (click)="this.viewService.setState('game', true)">Start game</button>
+		</div>
+  </div> -->
+
+	<div class="flex-row left">
+    <h2>Included decks:</h2>
+    <!-- <app-checkbox-list
+    [data]="this.list"
+    (selectionChange)="updateSelected($event)"
+    ></app-checkbox-list> -->
+	</div>
+
+
+
+
+
+<!--
+    <i
+    class="far fa-times-circle close"
+    [ngClass]="this.viewService.getState('join') ? 'showclose' : 'close'"
+    (click)="this.viewService.setState('join', false)">
+  ></i>
+
+  <div class="title">
+    Join a Game...
+    <div class="subtitle">
+      Enter your name and ask for the room code to start the party!
+    </div>
+  </div>
+
+  <div class="flex-row left">
+    <div class="flex-item-4">
+      <input
+        #newPlayer
+        (focusout)="this.sessionService.addPlayer(newPlayer.value)"
+        placeholder="this.sessionService.placeholder"
+      />
+    </div>
+    <div class="flex-item-4">
+      <button class="card-button" (click)="this.viewService.setState('join', true)">(click)="createRoom()">Join game</button>
+    </div>
+  </div>
+
+ -->

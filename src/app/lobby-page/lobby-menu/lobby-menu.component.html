@@ -1,0 +1,36 @@
+<div class="lobby">
+
+    <div class="lobby-title">
+      <div class="title">Humanity Against Cards
+        <div class="subtitle">
+          A horrible game for party people.
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-row center">
+      <div class="flex-item-4">
+        <button class="card-button" (click)="this.viewService.setState('start', true)">
+          Start game
+        </button>
+      </div>
+      <div class="flex-item-4">
+        <button class="card-button" (click)="this.viewService.setState('join', true)">
+          Join game
+        </button>
+      </div>
+      <div class="flex-item-4">
+        <button class="card-button" (click)="this.viewService.setState('game', true)" >
+          Random game
+        </button>
+      </div>
+      <div class="flex-item-4">
+        <button class="card-button" (click)="this.viewService.setState('rules', true)">
+          Game Rules
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+

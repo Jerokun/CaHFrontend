@@ -1,0 +1,41 @@
+<div class="rules scroll" [ngClass]="this.viewService.getState('rules') ? 'showrules' : 'rules'">
+  <i
+    class="far fa-times-circle close"
+    [ngClass]="this.viewService.getState('close') ? 'showclose' : 'close'"
+    (click)="this.viewService.setState('rules', false)"
+  ></i>
+  <div class="title">Cards Against Humanity Rules</div>
+  <h2>Basic Rules</h2>
+  <p>
+    To start the game, each player draws ten White Cards. <br /><br />
+    The person who most recently pooped begins as the Card Czar and plays a
+    Black Card. The Card Czar reads the question or fill-in-the-blank phrase on
+    the Black Card out loud. <br /><br />
+    Everyone else answers the question or fills in the blank by passing one
+    White Card, face down, to the Card Czar.
+    <br /><br />
+    The Card Czar shuffles all of the answers and shares each card combination
+    with the group. For full effect, the Card Czar should usually re-read the
+    Black Card before presenting each answer. The Card Czar then picks the
+    funniest play, and whoever submitted it gets one Awesome Point. <br /><br />
+    After the round, a new player becomes the Card Czar, and everyone draws back
+    up to ten White Cards.
+  </p>
+  <h2>Pick 2</h2>
+  <p>
+    Some cards say PICK 2 on the bottom. <br /><br />
+    To answer these, each player plays two White Cards in combination. Play them
+    in the order that the Card Czar should read them-the order matters.
+    <br /><br />
+    If the Card Czar has lobster claws for hands, you can use paperclips to
+    secure the cards in the right order.
+  </p>
+  <h2>Gambling</h2>
+  <p>
+    If a Black Card is played and you have more than one White Card that you
+    think could win, you can bet one of your Awesome Points to play an
+    additional White Card. <br /><br />
+    If you win, you keep your point. If you lose, whoever won the round gets the
+    point you wagered.
+  </p>
+</div>

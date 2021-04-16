@@ -1,0 +1,50 @@
+
+  <i
+    class="far fa-times-circle close"
+    [ngClass]="this.viewService.getState('start') ?'showclose' : 'close'"
+    (click)="this.viewService.setState('start',false)"
+  ></i>
+
+  <div class="title">
+    Creating Game...
+    <div class="subtitle">
+      Send the room code to your friends to start the party!
+    </div>
+  </div>
+
+  <div class="flex-row left">
+    <div class="flex-item-4">
+
+      <input
+        #newPlayer
+        (focusout)="this.sessionService.addPlayer(newPlayer.value)"
+        placeholder="{{ this.sessionService.placeholder }}"
+      ></div>
+
+    <div class="flex-item-4">
+      <button class="card-button" (click)="this.viewService.setState('room', true)" (click)="this.sessionService.createRoom()">Create room</button>
+    </div>
+  </div>
+
+  <div class="flex-row left">
+    <ul>
+      <li [ngClass]="this.viewService.getState('isprivate') ? 'check' : 'li'"  (click)="this.viewService.toggleState('isprivate')">
+        Private Room
+      </li>
+    </ul>
+  </div>
+
+  <h2>
+    Select card decks to include:
+  </h2>
+
+  <div class="flex-row left">
+
+    <app-checkbox-list
+    [data]="this.list"
+    (selectionChange)="updateSelected($event)"
+    ></app-checkbox-list>
+
+  </div>
+
+  

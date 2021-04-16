@@ -1,0 +1,728 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+// @import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+// @include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// $CahFrontend-primary: mat-palette($mat-indigo);
+// $CahFrontend-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// // The warn palette is optional (defaults to red).
+// $CahFrontend-warn: mat-palette($mat-red);
+
+// // Create the theme object. A theme consists of configurations for individual
+// // theming systems such as "color" or "typography".
+// $CahFrontend-theme: mat-light-theme((
+//   color: (
+//     primary: $CahFrontend-primary,
+//     accent: $CahFrontend-accent,
+//     warn: $CahFrontend-warn,
+//   )
+// ));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+// @include angular-material-theme($CahFrontend-theme);
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #222;
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  overflow: hidden;
+}
+* {
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+::-webkit-scrollbar {
+  width: 0.3rem;
+  padding: 0.1rem;
+}
+::-webkit-scrollbar-track {
+  background: 0;
+}
+::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: tomato;
+}
+h2 {
+  color: #fff;
+  font-size: 1.2rem;
+}
+p {
+  color: #fff;
+  font-weight: 500;
+  padding: 5px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  padding-left: 1rem;
+}
+li {
+  padding-left: 1.5rem;
+  padding-bottom: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+}
+li:before {
+  content: "\f0c8";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 500;
+  display: inline-block;
+  margin-left: -1.3em;
+  width: 1.3em;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+li.check:before {
+  content: "\f14a";
+  color: tomato;
+  opacity: 1;
+}
+
+
+
+
+
+.fa,
+i {
+  display: inline-block;
+  font: normal normal normal 30px/1 FontAwesome;
+  font-size: 30px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+}
+.container {
+  margin: 0 auto;
+}
+.padding{
+    padding: 5px;
+}
+.container100 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  pointer-events: none;
+}
+.flex-row {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.left {
+    align-items: left;
+  justify-content: left;
+}
+.right {
+  justify-content: right;
+  align-items: right;
+}
+.flex-item-2 {
+  flex-basis: 50%;
+  width: 50%;
+  padding: 5px;
+  box-sizing: border-box;
+  position: relative;
+}
+.flex-item-4 {
+  flex-basis: 25%;
+  width: 25%;
+  padding: 5px;
+  box-sizing: border-box;
+  position: relative;
+}
+.flex-item-10 {
+  flex-basis: 10%;
+  width: 10%;
+  padding: 5px;
+  box-sizing: border-box;
+  position: relative;
+}
+.flex-item-roomcode {
+  flex-basis: 15%;
+  width: 15%;
+  padding: 5px;
+  box-sizing: border-box;
+  position: relative;
+}
+.lobby {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+.blackbg {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+}
+.close {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 40px;
+  right: 7%;
+  z-index: 10000;
+  cursor: pointer;
+}
+.showclose {
+  position: fixed;
+}
+.close:hover {
+  color: tomato;
+}
+.scroll {
+  overflow-y: scroll !important;
+}
+.subtitle,
+.title {
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 700;
+  width: 100%;
+  color: #fff;
+  flex-basis: 100%;
+  padding: 5px;
+  padding-top: 40px;
+}
+.subtitle {
+  font-size: 1rem;
+  line-height: 1.3rem;
+  margin: 0;
+  width: auto;
+  padding: 1rem 4rem 1rem 0;
+}
+.card-button,
+input {
+  position: relative;
+  height: 3rem;
+  border-radius: 12px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  background: #fff;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-decoration: none;
+  text-align: center;
+  outline: inherit;
+  line-height: 3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.roomcode {
+  font-size: 2rem;
+  line-height: 3rem;
+  pointer-events: none;
+  cursor: text;
+}
+input {
+  text-align: left;
+  padding-left: 1rem;
+  cursor: text;
+}
+.card-button:hover {
+  background: tomato;
+  color: #fff;
+}
+.card-button:active {
+  background: tomato;
+  color: #fff;
+}
+.join,
+.room,
+.rules,
+.start,
+.sure {
+  box-sizing: border-box;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  padding: 0 10%;
+  overflow-y: hidden;
+  opacity: 0;
+}
+.start, .room{
+  overflow-y: scroll;
+}
+.room {
+  top: 0;
+  left: 100%;
+}
+.showroom {
+  left: 0;
+  opacity: 1;
+}
+.showjoin,
+.showrules,
+.showstart,
+.showsure {
+  top: 0;
+  opacity: 1;
+}
+
+.card {
+    position: relative;
+    height: 0;
+    padding: 140% 0 0 0;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  .card-inner {
+    display: flex;
+    //justify-content: center;
+    //align-items: center;
+    position: absolute;
+    max-width: 100%; /* not needed? */
+    max-height: 100%; /* not needed? */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 5px;
+  }
+  .mat-card-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+    padding: 5%;
+  }
+  v
+  .greybg{
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+
+.white-card {
+  background: #fff;
+}
+.white-card {
+  background: #fff;
+  color: rgb(22, 22, 22);
+  bottom: 0;
+}
+
+
+.gamecontainer{
+    position: relative;
+}
+
+.cardstack{
+    background: gold;
+    cursor: pointer;
+    position: relative;
+}
+.showcardstack{
+    position: absolute;
+    background: royalblue;
+}
+
+.confirmcard {
+  position: absolute;
+  opacity: 0;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  top: 0;
+  left: 100%;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  color: #fff;
+  padding: 0px;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+.showconfirmcard {
+  opacity: 1;
+  left: 0;
+  padding: 10px;
+}
+.confirmcard .card-button {
+  box-shadow: transparent;
+  margin-top: 10px;
+}
+.confirm {
+  background: gold;
+  opacity: 0;
+  bottom: 0;
+}
+.cardselected {
+  transform: rotateY(180deg);
+  background: tomato;
+}
+.one {
+  background: gold;
+}
+.two {
+  background: teal;
+}
+.three {
+  background: tomato;
+}
+.commitstatus {
+  top: 45%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  color: #000;
+  position: absolute;
+}
+.hand{
+  top: 0;
+  margin: 0;
+  padding: 5px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  // background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  padding-bottom: 4rem;
+}
+
+.normalhand{
+  position: relative;
+  opacity: 1;
+}
+
+
+.togglemodehand {
+  margin: 0 auto;
+  padding: 5px;
+  // position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  overflow-y: scroll;
+  padding-bottom: 4rem;
+}
+.hand .flex-row {
+    padding-bottom: 4rem;
+}
+.showhand {
+  top: 0;
+  opacity: 1;
+}
+.transpbg {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+}
+.showtranspbg {
+  top: 0;
+  opacity: 1;
+}
+
+
+
+.togglehand,
+.togglemenu,
+.togglepmenu,
+.togglechat,
+.togglevoice {
+  position: fixed;
+  right: 0;
+  z-index: 6;
+  width: 4rem;
+  height: 4rem;
+  background: #000;
+  text-align: center;
+}
+.togglemenu {
+  top: 0;
+  z-index: 7;
+}
+.togglepmenu {
+  top: 4rem;
+}
+.togglevoice{
+  bottom: 4rem;
+}
+.togglechat{
+  bottom: 0;
+}
+
+.togglehand i,
+.togglemenu i,
+.togglepmenu i,
+.togglevoice i,
+.togglechat i
+ {
+  line-height: 4rem;
+}
+.togglehandbtn{
+    bottom: -4rem;
+    width: 100%;
+}
+.showtogglehandbtn{
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.menu {
+  box-sizing: border-box;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: auto;
+  background: #000;
+  padding: 0 10%;
+  overflow: hidden;
+  opacity: 0;
+  // padding-bottom: 40px;
+}
+.showmenu {
+  top: 0;
+  opacity: 1;
+}
+.desktop{
+  width: calc(100% - 300px);
+  position: relative;
+  left: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.pmenu {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  height: 100%;
+  background: #111;
+  padding: 1rem;
+  overflow-y: hidden;
+  width: 300px;
+}
+.chat{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  width: 280px;
+  height: 280px;
+  background: white;
+  margin: 10px;
+}
+.voice{
+
+}
+.sidebar{
+  width: 4rem;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  z-index: 6;
+  background: black;
+}
+.pmenutoggle {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 2;
+  height: 100%;
+  background: #000;
+  padding: 0 1rem;
+  padding-top: 8rem;
+  overflow-y: hidden;
+  width: 50%;
+}
+.blackcard{
+  background-color: #000!important;
+}
+
+li.players::before {
+  content: "\f508" !important;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  margin-left: -1.3em;
+  width: 1.3em;
+  cursor: default !important;
+}
+
+li.players::after{
+  content: "\f235" !important;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  margin-left: 1em;
+  width: 1.3em;
+  cursor: pointer !important;
+}
+li.players::after:hover{
+  color: tomato !important;
+  cursor: pointer !important;
+}
+
+.pmenu li.players::before {
+  content: "\f508" !important;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  margin-left: -1.3em;
+  width: 1.3em;
+  cursor: default !important;
+}
+
+ul.playersul{
+
+ }
+ li.playersli{
+
+ }
+ ul.scoresul{
+
+ }
+ li.scoresli{
+
+ }
+.showpmenu {
+  right: 0;
+}
+.c1 {
+  color: tomato;
+}
+.c2 {
+  color: teal;
+}
+.c3 {
+  color: gold;
+}
+.c4 {
+  color: #006400;
+}
+.c5 {
+  color: maroon;
+}
+
+@media (min-width: 800px) {
+
+// .hand{
+
+// }
+//     .togglehand{
+//     display: none;
+// }
+
+ }
+
+@media (max-width: 1200px) {
+  .flex-item-10 {
+    flex-basis: 20%;
+    width: 20%;
+  }
+  .cardbutton {
+    flex-basis: 40%;
+    width: 40%;
+  }
+}
+@media (max-width: 800px) {
+  .flex-item-10 {
+    flex-basis: 25%;
+    width: 25%;
+  }
+  .flex-item-4 {
+    flex-basis: 50%;
+    width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  .flex-item-10 {
+    flex-basis: 33.33%;
+    width: 33.33%;
+  }
+  .flex-item-4 {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .mat-card-title {
+    font-size: 14px;
+  }
+  .cardbutton {
+    flex-basis: 15rem;
+    width: 15rem;
+  }
+}
+@media (max-width: 450px) {
+  .flex-item-10 {
+    flex-basis: 50%;
+    width: 50%;
+  }
+  .flex-item-4 {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .mat-card-title {
+    font-size: 14px;
+  }
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,5 @@
+<ul>
+	<li *ngFor="let name of this.data" [ngClass]="this.checkIfSelected(name) ? 'check' : 'li'" (click)="this.updateCurrentSelection(name)">
+		{{ name }}
+	</li>
+</ul>

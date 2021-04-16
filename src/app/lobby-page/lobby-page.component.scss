@@ -1,0 +1,43 @@
+.startholder {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.endholder {
+  display: flex;
+  justify-content: left;
+  position: relative;
+}
+
+.startbutton {
+  display: table-cell;
+  justify-content: center;
+  min-width: 10rem;
+  align-self: center;
+  height: 10rem;
+  width: 30rem;
+  font-size: 5rem;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.startbutton:focus {
+  display: table-cell;
+  justify-content: center;
+  min-width: 10rem;
+  align-self: center;
+  height: 10rem;
+  width: 30rem;
+  font-size: 5rem;
+  overflow: hidden;
+  vertical-align: middle;
+  background-color: black;
+  color: white;
+}
+
+.endbutton {
+  justify-content: center;
+  display: flex;
+  min-width: 10rem;
+}

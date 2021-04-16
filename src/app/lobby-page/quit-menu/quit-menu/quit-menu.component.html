@@ -1,0 +1,26 @@
+  <i
+    class="far fa-times-circle close"
+    [ngClass]="this.viewService.getState('sure') ? 'showclose' : 'close'"
+    (click)="this.viewService.setState('sure', false)"
+  ></i>
+
+  <div class="title">
+    {{ this.promptTitle }}
+    <div class="subtitle">
+      {{ this.promptText }}
+    </div>
+  </div>
+
+  <div class="flex-row left">
+    <div class="flex-item-4">
+      <button
+        class="card-button"
+        (click)="this.viewService.resetStates()"
+      >
+        {{ this.buttonTextVerify }}
+      </button>
+    </div>
+    <div class="flex-item-4">
+      <button class="card-button" (click)="this.viewService.setState('sure', false)">{{ this.buttonTextCancel }}</button>
+    </div>
+  </div>
