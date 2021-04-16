@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LobbyPageComponent } from './lobby-page/lobby.page';
+import { LobbyPageComponent } from './lobby-page/lobby.component';
 
 const routes: Routes = [
   { path: 'lobby', component: LobbyPageComponent },

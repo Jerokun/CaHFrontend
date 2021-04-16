@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LobbyPageComponent } from './lobby-page/lobby.page';
+import { LobbyPageComponent } from './lobby-page/lobby.component';
 import { BlackCardComponent } from './game/components/cards/black-card/black-card.component';
 import { WhiteCardComponent } from './game/components/cards/white-card/white-card.component';
 import { GameComponent } from './game/game.component';

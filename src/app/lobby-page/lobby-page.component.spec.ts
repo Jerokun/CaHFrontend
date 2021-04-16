@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { LobbyPageComponent } from './lobby.page';
+import { LobbyPageComponent } from './lobby.component';
 
 describe('LobbyPageComponent', () => {
 	let component: LobbyPageComponent;
