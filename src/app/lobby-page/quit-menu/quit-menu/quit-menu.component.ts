@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ViewService } from 'src/app/services/lobby/view.service';
+import { ViewService } from '../../services/view/view.service';
 
 @Component({
 	selector: 'app-quit-menu',

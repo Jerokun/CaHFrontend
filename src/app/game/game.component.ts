@@ -1,8 +1,8 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { CardService } from '../services/cards/card.service';
-import { SessionService } from '../services/game/session.service';
-import { ViewService } from '../services/lobby/view.service';
+import { ViewService } from '../lobby-page/services/view/view.service';
+import { CardService } from '../_deprecated/cards/card.service';
 import { IBlackCard } from './components/cards/black-card/IBlackCard';
+import { SessionService } from './services/session/session.service';
 
 @Component({
   selector: 'app-game',

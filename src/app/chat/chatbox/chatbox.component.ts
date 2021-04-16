@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatService } from 'src/app/services/lobby/chat.service';
 import { MessageDto } from 'src/app/dto/MessageDto';
+import { ChatService } from 'src/app/shared/chat/chat.service';
 
 @Component({
   selector: 'app-chatbox',
@@ -20,7 +20,7 @@ export class ChatboxComponent implements OnInit {
         this.addToInbox(receivedObj);
       }); // calls the service method to get the new messages sent
   }
-  
+
   send(): void {
     if (this.msgDto) {
       if (this.msgDto.user.length === 0 || this.msgDto.user.length === 0) {

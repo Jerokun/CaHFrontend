@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ViewService } from '../lobby/view.service';
-import { url } from 'inspector';
+import { ViewService } from 'src/app/lobby-page/services/view/view.service';
 
 export interface Lobby {
 	id: string;

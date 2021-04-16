@@ -1,8 +1,8 @@
 import { KeyValue } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
-import { SessionService } from '../services/game/session.service';
-import { ViewService } from '../services/lobby/view.service';
+import { SessionService } from '../game/services/session/session.service';
+import { ViewService } from './services/view/view.service';
 
 @Component({
 	selector: 'app-lobby-page',

@@ -6,8 +6,8 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { SessionService } from 'src/app/services/game/session.service';
-import { ViewService } from 'src/app/services/lobby/view.service';
+import { ViewService } from 'src/app/lobby-page/services/view/view.service';
+import { SessionService } from '../services/session/session.service';
 
 export interface IWhiteCardStatus {
   text: string;
@@ -22,7 +22,7 @@ export interface IWhiteCardStatus {
   styleUrls: ['./hand.component.scss'],
 })
 export class HandComponent implements OnInit, OnChanges {
-  // TODO: The user needs to see know how many (remaining) cards he needs to pick.
+  // TODO (Mark): The user needs to see know how many (remaining) cards he needs to pick.
   @Input() maxPicks: number;
   @Input() cards: string[];
   @Output() sendChosenCards = new EventEmitter<string[]>();

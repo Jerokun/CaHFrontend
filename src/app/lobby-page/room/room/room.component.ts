@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from 'src/app/services/game/session.service';
-import { ViewService } from 'src/app/services/lobby/view.service';
+import { SessionService } from 'src/app/game/services/session/session.service';
+import { ViewService } from '../../services/view/view.service';
 
 @Component({
 	selector: 'app-room',
