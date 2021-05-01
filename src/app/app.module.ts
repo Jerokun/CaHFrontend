@@ -11,7 +11,7 @@ import { GameComponent } from './game/game.component';
 import { HandComponent } from './game/hand/hand.component';
 import { CardService } from './_deprecated/cards/card.service';
 import { CardDataService } from './_deprecated/cards/card-data.service';
-import { ChatboxComponent } from './chat/chatbox/chatbox.component';
+import { ChatboxComponent } from './shared/chat/chatbox/chatbox.component';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';

@@ -1,19 +1,19 @@
 <div class="sidebar">kut sidebar</div>
 
 <div class="togglemenu">
-  <i [ngClass]="this.viewService.getState('menu') ? 'far fa-times-circle' : 'fas fa-bars'" (click)="this.viewService.toggleState('menu')"></i>
+	<i [ngClass]="this.viewService.getState('menu') ? 'far fa-times-circle' : 'fas fa-bars'" (click)="this.viewService.toggleState('menu')"></i>
 </div>
 
 <div class="togglepmenu">
-  <i [ngClass]="this.viewService.getState('pmenu') ? 'far fa-times-circle' : 'fas fa-users'" (click)="this.viewService.toggleState('pmenu')"></i>
+	<i [ngClass]="this.viewService.getState('pmenu') ? 'far fa-times-circle' : 'fas fa-users'" (click)="this.viewService.toggleState('pmenu')"></i>
 </div>
 
 <div class="togglechat">
-  <i [ngClass]="this.viewService.getState('chat') ? 'far fa-times-circle' : 'fas fa-comments'" (click)="this.viewService.toggleState('chat')"></i>
+	<i [ngClass]="this.viewService.getState('chat') ? 'far fa-times-circle' : 'fas fa-comments'" (click)="this.viewService.toggleState('chat')"></i>
 </div>
 
 <div class="togglevoice">
-  <i [ngClass]="this.viewService.getState('voice') ? 'far fa-times-circle' : 'fab fa-discord'" (click)="this.viewService.toggleState('voice')"></i>
+	<i [ngClass]="this.viewService.getState('voice') ? 'far fa-times-circle' : 'fab fa-discord'" (click)="this.viewService.toggleState('voice')"></i>
 </div>
 
 <div class="container desktop">
@@ -62,8 +62,6 @@
 
 <div class="container100">
 	<div class="transpbg" [ngClass]="this.viewService.getState('menu') ? 'showtranspbg' : 'transpbg'" (click)="this.viewService.toggleState('menu')"></div>
-
-
 
 	<div class="menu" [ngClass]="this.viewService.getState('menu') ? 'showmenu' : 'menu'">
 		<div class="flex-row left">
@@ -118,7 +116,9 @@
 		<div *ngIf="this.viewService.getState('game')" class="game"></div>
 	</div>
 
-	<!-- <div class="chat"></div> -->
+	<div *ngIf="viewService.getState('chat')" class="chat">
+		<app-chatbox></app-chatbox>
+	</div>
 
 	<div class="voice"></div>
 </div>
