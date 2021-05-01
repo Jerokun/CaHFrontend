@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import * as signalR from '@microsoft/signalr'; // import signalR
 import { HttpClient } from '@angular/common/http';
-import { ChatMessage } from '../../dto/ChatMessage';
+import { ChatMessage } from '../../models/ChatMessage';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
