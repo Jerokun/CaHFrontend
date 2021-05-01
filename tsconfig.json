@@ -17,10 +17,7 @@
 		"lib": ["esnext", "dom"]
 	},
 	"angularCompilerOptions": {
-		"fullTemplateTypeCheck": true,
-		"strictTemplates": true,
-		"preserveWhitespaces": true,
-		"trace": true
+		"enableIvy": true
 	},
 	"include": ["./"]
 }
