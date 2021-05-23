@@ -26,6 +26,7 @@ import { CheckboxListComponent } from './lobby-page/new-session/checkbox-list/ch
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SessionService } from './game/services/session/session.service';
 import { ViewService } from './lobby-page/services/view/view.service';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @NgModule({
 	declarations: [
@@ -45,8 +46,8 @@ import { ViewService } from './lobby-page/services/view/view.service';
 		QuitAndVerifyComponent,
 		CheckboxListComponent,
 	],
-	imports: [CommonModule, BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule, HttpClientModule, BrowserAnimationsModule],
-	providers: [CardService, CardDataService, SessionService, ViewService],
+	imports: [CommonModule, BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule, HttpClientModule, BrowserAnimationsModule, ToastrModule.forRoot(),],
+	providers: [CardService, CardDataService, SessionService, ViewService, ToastrService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

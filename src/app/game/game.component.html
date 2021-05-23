@@ -116,9 +116,26 @@
 		<div *ngIf="this.viewService.getState('game')" class="game"></div>
 	</div>
 
-	<div *ngIf="viewService.getState('chat')" class="chat">
+  <div class="chat" [ngClass]="this.viewService.getState('chat') ? 'showchat' : 'chat'">
+    <app-chatbox></app-chatbox>
+  </div>
+
+	<!-- <div *ngIf="viewService.getState('chat')" class="chat">
 		<app-chatbox></app-chatbox>
-	</div>
+
+    <div class="chat-msg-box">
+      <ul>
+        <li *ngFor="let chatMessage of chatMessages" [ngClass]="chatMessage.userName === chatMessage.userName ? 'in-msg' : 'ex-msg'">{{chatMessage.userName}} :<br /><span class="msg-italic-style">{{chatMessage.message}}</span></li>
+      </ul>
+    </div>
+    <div class="chat-text-input">
+      <input type="text" placeholder="Type message here" class="msg-input" [(ngModel)]="chatMessage.message"  />
+    </div>
+    <div class="chat-send"  (click)= "send()"><i class="fa fa-paper-plane"></i>>
+
+    </div>
+
+	</div> -->
 
 	<div class="voice"></div>
 </div>

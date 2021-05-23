@@ -1,4 +1,4 @@
-<div class="ud-header">
+<!-- <div class="ud-header">
     <h2 class="text-center">Public Chat</h2>
   </div>
   <div class="ud-body">
@@ -12,4 +12,16 @@
       <button class="send-btn" (click)= "send()"><i class="fa fa-paper-plane"></i></button>
     </div>
     <input type="text" placeholder="Your name" class="name-box" [(ngModel)]="chatMessage.userName" />
+  </div> -->
+
+  <div class="chat-msg-box">
+    <ul>
+      <li *ngFor="let chatMessage of chatMessages" [ngClass]="chatMessage.userName === chatMessage.userName ? 'in-msg' : 'ex-msg'">{{chatMessage.userName}} :<br /><span class="msg-italic-style">{{chatMessage.message}}</span></li>
+    </ul>
+  </div>
+  <div class="chat-text-input">
+    <input type="text" placeholder="Type message here" class="msg-input" [(ngModel)]="chatMessage.message"  />
+  </div>
+  <div class="chat-send"  (click)= "send()"><i class="fa fa-paper-plane"></i>
+
   </div>

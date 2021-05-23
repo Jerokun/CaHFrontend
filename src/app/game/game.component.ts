@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ViewService } from '../lobby-page/services/view/view.service';
 import { CardService } from '../_deprecated/cards/card.service';
 import { IBlackCard } from './components/cards/black-card/IBlackCard';
@@ -11,7 +12,7 @@ import { SessionService } from './services/session/session.service';
   providers: [CardService],
 })
 export class GameComponent implements OnInit, OnChanges {
-  constructor(private cardService: CardService, public viewService: ViewService, public sessionService: SessionService) {}
+  constructor(private cardService: CardService, public viewService: ViewService, public sessionService: SessionService, private toastr: ToastrService) {}
 
   stackcards = false;
 
@@ -28,6 +29,9 @@ export class GameComponent implements OnInit, OnChanges {
     this.whiteCards = this.cardService.newHand();
     console.log('this.blackCard:', this.blackCard);
     console.log('this.whiteCards:', this.whiteCards);
+    this.toastr.success("HET IS GELUKT!!", "Geslaagd");
+    this.toastr.warning("OHOH!!!", 'Uuuh...');
+    this.toastr.error('Something bad has happened', 'BOOM!!!');
   }
 
   submitCards(event: any): void {
