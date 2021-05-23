@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ViewService } from 'src/app/lobby-page/services/view/view.service';
+import { LobbyViewService } from 'src/app/lobby-page/services/view/view.service';
 
 export interface Lobby {
 	id: string;
@@ -23,7 +23,7 @@ export interface PostNewRoom {
 	providedIn: 'root',
 })
 export class SessionService {
-	constructor(private http: HttpClient, private viewService: ViewService) {}
+	constructor(private http: HttpClient, private viewService: LobbyViewService) {}
 
 	private _userName: string;
 	private _roomCode: string = Math.random().toString(36).substr(2, 4);

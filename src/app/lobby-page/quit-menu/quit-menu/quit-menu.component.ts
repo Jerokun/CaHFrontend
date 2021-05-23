@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ViewService } from '../../services/view/view.service';
+import { LobbyViewService } from '../../services/view/view.service';
 
 @Component({
 	selector: 'app-quit-menu',
@@ -12,7 +12,7 @@ export class QuitAndVerifyComponent implements OnInit {
 	@Input() buttonTextVerify = 'Quit';
 	@Input() buttonTextCancel = 'Stay';
 
-	constructor(public viewService: ViewService) {}
+	constructor(public viewService: LobbyViewService) {}
 
 	ngOnInit(): void {}
 

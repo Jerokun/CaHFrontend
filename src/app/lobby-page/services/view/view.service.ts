@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
 	providedIn: 'root',
 })
-export class ViewService {
+export class LobbyViewService {
 	private readonly viewStates: Array<KeyValue<string, boolean>> = [
 		{ key: 'start', value: false },
 		{ key: 'game', value: false },

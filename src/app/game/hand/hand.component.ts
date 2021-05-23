@@ -6,7 +6,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { ViewService } from 'src/app/lobby-page/services/view/view.service';
+import { LobbyViewService } from 'src/app/lobby-page/services/view/view.service';
 import { SessionService } from '../services/session/session.service';
 
 export interface IWhiteCardStatus {
@@ -30,7 +30,7 @@ export class HandComponent implements OnInit, OnChanges {
   chosenCards: string[] = [];
   whiteCards: IWhiteCardStatus[] = [];
 
-  constructor(public viewService: ViewService, public sessionService: SessionService) { }
+  constructor(public viewService: LobbyViewService, public sessionService: SessionService) { }
 
   hand = true;
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { ViewService } from '../lobby-page/services/view/view.service';
+import { LobbyViewService } from '../lobby-page/services/view/view.service';
 import { CardService } from '../_deprecated/cards/card.service';
 import { IBlackCard } from './components/cards/black-card/IBlackCard';
 import { SessionService } from './services/session/session.service';
@@ -12,7 +12,7 @@ import { SessionService } from './services/session/session.service';
   providers: [CardService],
 })
 export class GameComponent implements OnInit, OnChanges {
-  constructor(private cardService: CardService, public viewService: ViewService, public sessionService: SessionService, private toastr: ToastrService) {}
+  constructor(private cardService: CardService, public viewService: LobbyViewService, public sessionService: SessionService, private toastr: ToastrService) {}
 
   stackcards = false;
 

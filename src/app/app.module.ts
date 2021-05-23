@@ -25,7 +25,7 @@ import { QuitAndVerifyComponent } from './lobby-page/quit-menu/quit-menu/quit-me
 import { CheckboxListComponent } from './lobby-page/new-session/checkbox-list/checkbox-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SessionService } from './game/services/session/session.service';
-import { ViewService } from './lobby-page/services/view/view.service';
+import { LobbyViewService } from './lobby-page/services/view/view.service';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @NgModule({
@@ -47,7 +47,7 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 		CheckboxListComponent,
 	],
 	imports: [CommonModule, BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule, HttpClientModule, BrowserAnimationsModule, ToastrModule.forRoot(),],
-	providers: [CardService, CardDataService, SessionService, ViewService, ToastrService],
+	providers: [CardService, CardDataService, SessionService, LobbyViewService, ToastrService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

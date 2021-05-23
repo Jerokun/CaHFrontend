@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ViewService } from '../../services/view/view.service';
+import { LobbyViewService } from '../../services/view/view.service';
 
 @Component({
   selector: 'app-game-rules',
@@ -8,7 +8,7 @@ import { ViewService } from '../../services/view/view.service';
 })
 export class GameRulesComponent implements OnInit {
 
-  constructor(public viewService: ViewService) { }
+  constructor(public viewService: LobbyViewService) { }
 
   ngOnInit(): void {
   }

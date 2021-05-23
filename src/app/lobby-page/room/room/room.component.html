@@ -51,9 +51,13 @@
 
 <div class="togglechat">
   <i [ngClass]="this.viewService.getState('chat') ? 'far fa-times-circle' : 'fas fa-comments'" (click)="this.viewService.toggleState('chat')"></i>
+
 </div>
 
 <div class="togglevoice">
   <i [ngClass]="this.viewService.getState('voice') ? 'far fa-times-circle' : 'fab fa-discord'" (click)="this.viewService.toggleState('voice')"></i>
 </div>
 
+<div class="chat" [ngClass]="this.viewService.getState('chat') ? 'showchat' : 'chat'">
+  <app-chatbox></app-chatbox>
+</div>
